@@ -1,0 +1,142 @@
+body {
+  /*background: lightgreen;*/
+  /*opacity: 0.5;*/
+/*  background-image: url('Sky.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;*/
+
+    background-image: url({{ url_for('static', filename='/Sky.jpg') }})
+) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+/*#img-sky{
+  background-repeat: no-repeat;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+svg {
+  width: 100%;
+  height: 100%;  
+  position: absolute;
+}
+
+.top-color{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top : 0;
+    width: 100vw;
+    z-index: 1;
+    background: black;
+    opacity: 0.5;
+    z-index: 5;
+}
+
+.top{
+  position: relative;
+  z-index: 5;
+}
+
+.image-blur{
+     width: 100%;
+     height: 100%;
+}
+
+/*html, body, .container{
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}*/
+.container{
+  background-color: #007ced;
+  background: linear-gradient(to bottom, #007ced 1%,#cce7ff 100%);
+}
+
+#create{
+  /*position: absolute;*/
+  font-size: 50px;
+  color: green;
+  font-family: 'Roboto Condensed';
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  z-index: 10;
+}
+
+  &:focus {
+    outline: none;
+  }
+  
+  &:hover {
+    border: 1px solid rgba(0,0,0,0.5);
+    color: black;
+  }
+
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color:white;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #AE898B;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78BE7C;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.link {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.link a {
+  color: black;
+  font-size: 25px; 
+}
+
+

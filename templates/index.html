@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Plant Growing</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body onload="move()">
+ <div class="container">
+   <img id="cloud1" style="position: absolute; top: -50px; left: 0" src="{{ url_for('static', filename='clouds1.png') }}">
+   <!-- <img style="position: absolute; top: 5px; left: 20px" src="clouds2.png"> -->
+   <img  id="cloud2" style="position: absolute; top: 100px; left: 5px" src="{{ url_for('static', filename='clouds3.png') }}">
+   <!-- <img style="position: absolute; top: 5px; left: 60px" src="clouds4.png"> -->
+ </div>
+ <div class="svg-image">
+  <svg viewBox="150 -20 300 350" preserveAspectRatio="xMidYMax meet">
+  <g id="stems" fill="none" stroke="#752727" stroke-width="5px"></g>
+  <g id="leaves"></g>
+  </svg>
+  <br />
+</div>
+<div class="top-color">	
+	<img class="image-blur" src="{{ url_for('static', filename='blur.jpg') }}">
+</div>
+<!-- <img id="create" src="LEAVES.png"> -->
+<div id="create" class="top-text">
+	PLANT SEEDLINGS CLASSIFICATION
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<!-- <script src="//s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}">
+</script>
+</br>
+</br>
+<div align = "center" class="top"> 
+    <form action="{{url_for('prediction')}}" method="POST">
+    <input type="url" placeholder="Enter image url"  name="in" style="margin-bottom: 20px; color: white;" class="btn"></br> 
+    <button class="btn"><span>Submit</span></button>
+    <h1 style="color: cyan; -webkit-text-stroke: 2px skyblue; font-size: 40px;">{{pred}}</h1>
+  </form>
+  </div>
+</body>
+</html>
